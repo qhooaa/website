@@ -66,8 +66,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);display:
 .btn-outline{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--navy);background:none;border:1px solid var(--navy);padding:14px 32px;cursor:pointer;transition:all .2s}
 .btn-outline:hover{background:var(--navy);color:var(--paper)}
 .hero-visual{display:flex;align-items:center;justify-content:center;position:relative}
-.hero-img-box{width:100%;aspect-ratio:4/3;background:var(--navy);border-radius:8px;overflow:hidden;position:relative}
-.hero-img-box::after{content:"인테리어 대표 이미지";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.2);font-size:14px;font-weight:600;letter-spacing:2px}
+.hero-img-box{width:100%;aspect-ratio:4/3;border-radius:8px;overflow:hidden;position:relative}
+.hero-img-box img{width:100%;height:100%;object-fit:cover}
 .hero-badge{position:absolute;bottom:-20px;right:-10px;background:var(--gold);color:var(--paper);padding:16px 24px;border-radius:4px;text-align:center}
 @media(min-width:768px){.hero-badge{bottom:-30px;right:-20px;padding:20px 32px}}
 .hero-badge-n{font-family:"DM Serif Display",serif;font-size:32px;line-height:1}
@@ -89,6 +89,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);display:
 .brand-track{display:flex;gap:60px;animation:marquee 30s linear infinite}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .brand-item{font-size:14px;font-weight:600;color:var(--muted);opacity:.4;flex-shrink:0;letter-spacing:2px;text-transform:uppercase}
+
+/* REASONS */
+.reasons{padding:80px 24px}
+@media(min-width:768px){.reasons{padding:96px 52px;max-width:var(--max-w);margin:0 auto}}
+.reasons-grid{display:grid;grid-template-columns:1fr;gap:32px}
+@media(min-width:768px){.reasons-grid{grid-template-columns:repeat(3,1fr);gap:40px}}
+.reason-card{padding:40px 28px;border:1px solid var(--line);border-radius:4px;transition:border-color .3s}
+.reason-card:hover{border-color:var(--gold)}
+.reason-num{font-family:"DM Serif Display",serif;font-size:36px;color:var(--gold);margin-bottom:16px;font-style:italic}
+.reason-title{font-size:16px;font-weight:700;margin-bottom:10px}
+.reason-desc{font-size:13px;color:var(--muted);line-height:1.9}
 
 /* ABOUT PAGE */
 .about-hero{padding:calc(var(--nav-h) + 60px) 24px 60px;background:var(--navy-dark);color:var(--paper);text-align:center}
@@ -118,76 +129,46 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);display:
 @media(min-width:768px){.products-intro{padding:calc(var(--nav-h) + 80px) 52px 60px;max-width:var(--max-w);margin:0 auto}}
 .products-grid{padding:0 24px 80px}
 @media(min-width:768px){.products-grid{padding:0 52px 80px;max-width:var(--max-w);margin:0 auto}}
-.prod-grid{display:grid;grid-template-columns:1fr;gap:24px}
+.prod-grid{display:grid;grid-template-columns:1fr;gap:32px}
 @media(min-width:768px){.prod-grid{grid-template-columns:repeat(3,1fr);gap:32px}}
 .prod-card{position:relative;overflow:hidden;border-radius:4px;cursor:pointer;transition:transform .3s}
 .prod-card:hover{transform:translateY(-4px)}
-.prod-img{aspect-ratio:4/3;background:var(--navy);position:relative}
-.prod-img::after{content:attr(data-label);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.2);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase}
+.prod-img{aspect-ratio:4/3;overflow:hidden;position:relative;background:#f0ece6;border-radius:4px}
+.prod-img img{width:100%;height:100%;object-fit:cover}
 .prod-body{padding:20px 0}
 .prod-tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
 .prod-name{font-family:"Noto Serif KR",serif;font-size:20px;margin-bottom:6px}
 .prod-desc{font-size:12px;color:var(--muted);line-height:1.7}
 
-/* PORTFOLIO PAGE */
-.portfolio-intro{padding:calc(var(--nav-h) + 60px) 24px 40px}
-@media(min-width:768px){.portfolio-intro{padding:calc(var(--nav-h) + 80px) 52px 40px;max-width:var(--max-w);margin:0 auto}}
-.portfolio-grid{padding:0 24px 80px}
-@media(min-width:768px){.portfolio-grid{padding:0 52px 80px;max-width:var(--max-w);margin:0 auto}}
-.folio-grid{display:grid;grid-template-columns:1fr;gap:24px}
-@media(min-width:768px){.folio-grid{grid-template-columns:repeat(2,1fr);gap:32px}}
-.folio-card{border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:box-shadow .3s}
-.folio-card:hover{box-shadow:0 8px 30px rgba(0,0,0,.08)}
-.folio-img{aspect-ratio:16/9;background:var(--navy);position:relative}
-.folio-img::after{content:"시공 사진";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.2);font-size:12px;font-weight:600;letter-spacing:2px}
-.folio-body{padding:24px}
-.folio-type{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-.folio-title{font-size:18px;font-weight:700;margin-bottom:8px}
-.folio-meta{font-size:12px;color:var(--muted);line-height:1.7}
-
-/* EVENT PAGE */
-.event-hero{padding:calc(var(--nav-h) + 60px) 24px 60px;background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 100%);color:var(--paper);text-align:center}
-@media(min-width:768px){.event-hero{padding:calc(var(--nav-h) + 80px) 52px 80px}}
-.event-hero .section-label{color:var(--gold)}
-.event-hero .section-h{color:var(--paper)}
-.event-list{padding:60px 24px}
-@media(min-width:768px){.event-list{padding:80px 52px;max-width:var(--max-w);margin:0 auto}}
-.event-card{display:grid;grid-template-columns:1fr;gap:24px;padding:40px 0;border-bottom:1px solid var(--line)}
-@media(min-width:768px){.event-card{grid-template-columns:1fr 1fr;gap:48px;align-items:center}}
-.event-card:first-child{padding-top:0}
-.event-img{aspect-ratio:16/9;background:#f0ece6;border-radius:4px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px;font-weight:600;letter-spacing:2px}
-.event-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--paper);background:var(--gold);padding:4px 12px;border-radius:2px;margin-bottom:12px}
-.event-title{font-family:"Noto Serif KR",serif;font-size:24px;margin-bottom:12px}
-.event-desc{font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:16px}
-.event-period{font-size:12px;font-weight:600;color:var(--navy)}
-
 /* DIRECTIONS PAGE */
-.dir-hero{padding:calc(var(--nav-h) + 60px) 24px 40px}
-@media(min-width:768px){.dir-hero{padding:calc(var(--nav-h) + 80px) 52px 40px;max-width:var(--max-w);margin:0 auto}}
+.dir-hero{padding:calc(var(--nav-h) + 60px) 24px 40px;text-align:center}
+@media(min-width:768px){.dir-hero{padding:calc(var(--nav-h) + 80px) 52px 40px}}
 .dir-content{padding:0 24px 80px}
 @media(min-width:768px){.dir-content{padding:0 52px 80px;max-width:var(--max-w);margin:0 auto}}
 .dir-grid{display:grid;grid-template-columns:1fr;gap:32px}
-@media(min-width:768px){.dir-grid{grid-template-columns:1fr 1fr;gap:52px}}
-.dir-map{aspect-ratio:16/9;background:#e8e4de;border-radius:4px;overflow:hidden;border:1px solid var(--line)}
+@media(min-width:768px){.dir-grid{grid-template-columns:1.4fr 1fr;gap:40px}}
+.dir-map{aspect-ratio:16/9;border-radius:4px;overflow:hidden}
 .dir-map iframe{width:100%;height:100%;border:0}
-.dir-info{display:flex;flex-direction:column;gap:24px}
+.dir-info{display:flex;flex-direction:column;gap:20px}
 .dir-row{display:flex;gap:16px}
-.dir-key{font-size:12px;font-weight:700;letter-spacing:1px;color:var(--navy);min-width:60px;flex-shrink:0}
-.dir-val{font-size:14px;color:var(--muted);line-height:1.8}
+.dir-key{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);min-width:60px;padding-top:3px}
+.dir-val{font-size:14px;line-height:1.8}
+
+/* CTA SECTION */
+.cta-section{padding:80px 24px;background:var(--navy-dark);color:var(--paper);text-align:center}
+@media(min-width:768px){.cta-section{padding:96px 52px}}
+.cta-section .section-h{color:var(--paper);margin-bottom:20px}
+.cta-desc{font-size:16px;color:rgba(255,255,255,.5);line-height:2;max-width:500px;margin:0 auto 36px}
+.cta-phone{font-family:"DM Serif Display",serif;font-size:clamp(28px,4vw,44px);color:var(--gold);margin-bottom:12px}
+.cta-sub{font-size:13px;color:rgba(255,255,255,.4)}
 
 /* FOOTER */
-footer{padding:32px 24px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:12px;background:var(--navy-dark);color:rgba(255,255,255,.4)}
-@media(min-width:768px){footer{flex-direction:row;align-items:center;justify-content:space-between;padding:32px 52px}}
-.footer-copy{font-size:11px}
-.footer-links{display:flex;gap:18px}
-.footer-links a{font-size:11px;font-weight:500;color:rgba(255,255,255,.4)}
-
-/* ANIMATIONS */
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-.page.active .hero-title{animation:fadeUp .7s .1s both}
-.page.active .hero-body{animation:fadeUp .7s .25s both}
-.page.active .hero-actions{animation:fadeUp .7s .4s both}
-.page.active .hero-visual{animation:fadeUp .8s .35s both}
+footer{padding:32px 24px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:12px;align-items:center}
+@media(min-width:768px){footer{padding:32px 52px;flex-direction:row;justify-content:space-between}}
+.footer-copy{font-size:12px;color:var(--muted)}
+.footer-links{display:flex;gap:24px}
+.footer-links a{font-size:12px;color:var(--muted);transition:color .2s}
+.footer-links a:hover{color:var(--ink)}
 </style>
 </head>
 <body>
@@ -198,103 +179,107 @@ footer{padding:32px 24px;border-top:1px solid var(--line);display:flex;flex-dire
     <div class="nav-logo-icon">성원<br>리빙</div>
     <div>
       <div class="nav-logo-text">성원리빙</div>
-      <div class="nav-logo-sub">SUNGWONLIVING</div>
+      <div class="nav-logo-sub">sungwonliving</div>
     </div>
   </div>
-  <div class="nav-links">
-    <a onclick="showPage('home')" data-page="home" class="active">HOME</a>
-    <a onclick="showPage('about')" data-page="about">회사소개</a>
-    <a onclick="showPage('products')" data-page="products">제품라인</a>
-    <a onclick="showPage('portfolio')" data-page="portfolio">시공사례</a>
-    <a onclick="showPage('event')" data-page="event">인테리어행사</a>
-    <a onclick="showPage('directions')" data-page="directions">오시는길</a>
-  </div>
-  <button class="nav-cta" onclick="showPage('event')">상담예약</button>
-  <div class="hamburger" onclick="toggleMobileNav()">
-    <span></span><span></span><span></span>
-  </div>
+  <ul class="nav-links">
+    <li><a class="active" data-page="home" onclick="showPage('home')">HOME</a></li>
+    <li><a data-page="about" onclick="showPage('about')">회사소개</a></li>
+    <li><a data-page="products" onclick="showPage('products')">제품라인</a></li>
+    <li><a data-page="directions" onclick="showPage('directions')">오시는길</a></li>
+  </ul>
+  <button class="nav-cta" onclick="location.href='tel:031-708-7726'">상담 예약</button>
+  <div class="hamburger" onclick="toggleMobileNav()"><span></span><span></span><span></span></div>
 </nav>
 
-<!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobileNav">
   <a onclick="showPage('home');toggleMobileNav()">HOME</a>
   <a onclick="showPage('about');toggleMobileNav()">회사소개</a>
   <a onclick="showPage('products');toggleMobileNav()">제품라인</a>
-  <a onclick="showPage('portfolio');toggleMobileNav()">시공사례</a>
-  <a onclick="showPage('event');toggleMobileNav()">인테리어행사</a>
   <a onclick="showPage('directions');toggleMobileNav()">오시는길</a>
+  <a href="tel:031-708-7726" style="color:var(--gold)">031-708-7726</a>
 </div>
 
 <!-- ======================== HOME ======================== -->
 <div class="page active" id="page-home">
   <section class="hero">
-    <div class="hero-left">
-      <div class="hero-eyebrow"><div class="hero-eyebrow-line"></div><span class="hero-eyebrow-text">신축 아파트 인테리어 전문</span></div>
-      <h1 class="hero-title">당신의 집을<br>완성하는<br><em>프리미엄 인테리어</em></h1>
-      <p class="hero-body">유럽 명품 주방부터 스마트 욕실까지.<br>신축 입주 전 토탈 인테리어,<br>성원리빙이 설계합니다.</p>
+    <div class="hero-text">
+      <div class="hero-eyebrow"><span class="hero-eyebrow-line"></span><span class="hero-eyebrow-text">European Premium Interior</span></div>
+      <h1 class="hero-title">유럽 프리미엄으로<br><em>건강하고 아름다운 집</em></h1>
+      <p class="hero-body">이탈리아·독일 명품 마감재를 직수입하여<br>주방, 바닥, 창호, 욕실까지 — 토탈 인테리어를<br>한 번에 완성합니다.</p>
       <div class="hero-actions">
-        <button class="btn-navy" onclick="showPage('event')">무료 상담 예약</button>
-        <button class="btn-outline" onclick="showPage('portfolio')">시공사례 보기</button>
+        <button class="btn-navy" onclick="showPage('products')">제품라인 보기</button>
+        <button class="btn-outline" onclick="location.href='tel:031-708-7726'">상담 예약</button>
       </div>
     </div>
     <div class="hero-visual">
-      <div class="hero-img-box"></div>
-      <div class="hero-badge">
-        <div class="hero-badge-n">20+</div>
-        <div class="hero-badge-l">글로벌 브랜드</div>
+      <div class="hero-img-box">
+        <img src="images/hero.jpeg" alt="유럽 프리미엄 주방 인테리어">
+      </div>
+      <div class="hero-badge"><div class="hero-badge-n">13</div><div class="hero-badge-l">카테고리</div></div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="stats-bar">
+    <div><div class="stat-item-n">4</div><div class="stat-item-l">유럽 국가</div></div>
+    <div><div class="stat-item-n">13</div><div class="stat-item-l">제품 카테고리</div></div>
+    <div><div class="stat-item-n">20+</div><div class="stat-item-l">프리미엄 브랜드</div></div>
+    <div><div class="stat-item-n">1</div><div class="stat-item-l">토탈 솔루션</div></div>
+  </section>
+
+  <!-- BRAND MARQUEE -->
+  <section class="brand-marquee">
+    <div class="brand-track">
+      <span class="brand-item">Dada</span><span class="brand-item">Molteni&C</span><span class="brand-item">nolte Küchen</span>
+      <span class="brand-item">Garbelotto</span><span class="brand-item">Cosmolite</span><span class="brand-item">Santamargherita</span>
+      <span class="brand-item">CM Spa</span><span class="brand-item">Minotti Cucine</span><span class="brand-item">Elmar</span>
+      <span class="brand-item">Euromobil</span><span class="brand-item">Febal Casa</span><span class="brand-item">REHAU</span>
+      <span class="brand-item">NEXIS</span><span class="brand-item">ARTECHBIO</span><span class="brand-item">G.ROOM</span>
+      <!-- duplicate for seamless loop -->
+      <span class="brand-item">Dada</span><span class="brand-item">Molteni&C</span><span class="brand-item">nolte Küchen</span>
+      <span class="brand-item">Garbelotto</span><span class="brand-item">Cosmolite</span><span class="brand-item">Santamargherita</span>
+      <span class="brand-item">CM Spa</span><span class="brand-item">Minotti Cucine</span><span class="brand-item">Elmar</span>
+      <span class="brand-item">Euromobil</span><span class="brand-item">Febal Casa</span><span class="brand-item">REHAU</span>
+      <span class="brand-item">NEXIS</span><span class="brand-item">ARTECHBIO</span><span class="brand-item">G.ROOM</span>
+    </div>
+  </section>
+
+  <!-- 3 REASONS -->
+  <section class="reasons">
+    <div class="section-label">Why Us</div>
+    <h2 class="section-h">성원리빙을 선택하는<br><em>3가지 이유</em></h2>
+    <div class="reasons-grid">
+      <div class="reason-card">
+        <div class="reason-num">01</div>
+        <div class="reason-title">유럽 토탈 패키지</div>
+        <div class="reason-desc">주방·욕실·바닥·창호·도배까지, 이탈리아와 독일 프리미엄 브랜드로 하나의 공간을 완성합니다. 따로 찾아다닐 필요가 없습니다.</div>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">02</div>
+        <div class="reason-title">건강한 주거 환경</div>
+        <div class="reason-desc">ARTECHBIO 정수 시스템과 G.ROOM 친환경 마감재로 가족의 건강까지 생각하는 인테리어를 제안합니다.</div>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">03</div>
+        <div class="reason-title">전문가 직접 상담</div>
+        <div class="reason-desc">20년 이상의 수입 마감재 경험을 바탕으로, 공간의 규모와 예산에 맞는 최적의 조합을 제안합니다.</div>
       </div>
     </div>
   </section>
 
-  <!-- STATS -->
-  <div class="stats-bar">
-    <div class="stat-item"><div class="stat-item-n">20+</div><div class="stat-item-l">프리미엄 브랜드</div></div>
-    <div class="stat-item"><div class="stat-item-n">500+</div><div class="stat-item-l">시공 실적</div></div>
-    <div class="stat-item"><div class="stat-item-n">13</div><div class="stat-item-l">제품 카테고리</div></div>
-    <div class="stat-item"><div class="stat-item-n">A/S</div><div class="stat-item-l">사후 관리 보장</div></div>
-  </div>
-
-  <!-- BRAND MARQUEE -->
-  <div class="brand-marquee">
-    <div class="brand-track">
-      <span class="brand-item">elmar</span>
-      <span class="brand-item">Euromobili</span>
-      <span class="brand-item">minottcucine</span>
-      <span class="brand-item">nolte</span>
-      <span class="brand-item">NEXIS</span>
-      <span class="brand-item">Roca</span>
-      <span class="brand-item">paffoni</span>
-      <span class="brand-item">FULEN</span>
-      <span class="brand-item">hansgrohe</span>
-      <span class="brand-item">De Dietrich</span>
-      <span class="brand-item">REHAU</span>
-      <span class="brand-item">ARTECBIO</span>
-      <span class="brand-item">G.ROOM</span>
-      <span class="brand-item">DAELIM</span>
-      <span class="brand-item">LG</span>
-      <span class="brand-item">SAMSUNG</span>
-      <span class="brand-item">elmar</span>
-      <span class="brand-item">Euromobili</span>
-      <span class="brand-item">minottcucine</span>
-      <span class="brand-item">nolte</span>
-      <span class="brand-item">NEXIS</span>
-      <span class="brand-item">Roca</span>
-      <span class="brand-item">paffoni</span>
-      <span class="brand-item">FULEN</span>
-      <span class="brand-item">hansgrohe</span>
-      <span class="brand-item">De Dietrich</span>
-      <span class="brand-item">REHAU</span>
-      <span class="brand-item">ARTECBIO</span>
-      <span class="brand-item">G.ROOM</span>
-      <span class="brand-item">DAELIM</span>
-      <span class="brand-item">LG</span>
-      <span class="brand-item">SAMSUNG</span>
-    </div>
-  </div>
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="section-label" style="color:rgba(255,255,255,.3)">Contact</div>
+    <h2 class="section-h" style="color:var(--paper)">유럽 프리미엄 인테리어,<br><em>지금 상담하세요</em></h2>
+    <div class="cta-desc">쇼룸 방문 또는 전화 상담을 통해<br>공간에 맞는 최적의 제안을 받아보세요.</div>
+    <div class="cta-phone">031-708-7726</div>
+    <div class="cta-sub">평일 09:00 – 18:00 · 토요일 예약 상담</div>
+  </section>
 
   <footer>
-    <div class="footer-copy">© 2024 (주)성원리빙. All rights reserved.</div>
-    <div class="footer-links"><a href="#">블로그</a><a href="#">TEL 031-708-7726</a></div>
+    <div class="footer-copy">&copy; 2025 (주)성원리빙. All rights reserved.</div>
+    <div class="footer-links"><a href="https://blog.naver.com/sungwonliving" target="_blank">블로그</a><a href="tel:031-708-7726">TEL 031-708-7726</a></div>
   </footer>
 </div>
 
@@ -302,185 +287,133 @@ footer{padding:32px 24px;border-top:1px solid var(--line);display:flex;flex-dire
 <div class="page" id="page-about">
   <section class="about-hero">
     <div class="section-label">About Us</div>
-    <h2 class="section-h">공간을 만드는 사람들,<br><em>성원리빙</em></h2>
-    <p class="about-desc">성원리빙은 신축 아파트 입주 전 인테리어를 전문으로 합니다.<br>유럽 명품 브랜드와 국내 프리미엄 브랜드를 직접 취급하며,<br>주방·욕실·창호·바닥재·조명까지 토탈 패키지를 제공합니다.</p>
+    <h2 class="section-h">아파트 특화 마감재<br><em>전문기업</em></h2>
+    <p class="about-desc">성원리빙은 유럽 4개국 프리미엄 브랜드를 직접 수입하여<br>주방, 욕실, 바닥, 창호까지 토탈 인테리어 솔루션을 제공합니다.</p>
   </section>
-
   <section class="about-values">
-    <div class="section-label">Our Values</div>
-    <h2 class="section-h">성원리빙을 선택하는<br><em>3가지 이유</em></h2>
+    <div class="section-label">Values</div>
+    <h2 class="section-h">우리가 <em>지키는 것</em></h2>
     <div class="values-grid">
       <div class="value-card">
         <div class="value-num">01</div>
-        <div class="value-title">글로벌 브랜드 직접 취급</div>
-        <div class="value-desc">이탈리아·독일·스페인 등 유럽 명품 주방, 욕실, 수전 브랜드를 직접 수입·시공합니다. 중간 유통 없이 합리적 가격을 제공합니다.</div>
+        <div class="value-title">정품 직수입</div>
+        <div class="value-desc">이탈리아, 독일 본사에서 직접 수입합니다. 유통 과정을 최소화하여 정품을 합리적인 가격에 제공합니다.</div>
       </div>
       <div class="value-card">
         <div class="value-num">02</div>
-        <div class="value-title">토탈 인테리어 원스톱</div>
-        <div class="value-desc">주방·욕실·창호·바닥재·도배·조명·붙박이장·현관장까지 13개 카테고리를 한 번에. 업체 분리의 번거로움 없이 일괄 시공합니다.</div>
+        <div class="value-title">토탈 솔루션</div>
+        <div class="value-desc">주방부터 바닥, 창호, 욕실까지 13개 카테고리를 한 곳에서 해결합니다. 브랜드 간 조화를 전문가가 설계합니다.</div>
       </div>
       <div class="value-card">
         <div class="value-num">03</div>
-        <div class="value-title">책임 시공 + A/S 보장</div>
-        <div class="value-desc">자체 시공팀이 직접 설치하며, 시공 후에도 체계적인 A/S 시스템으로 하자 없는 마무리를 약속합니다.</div>
+        <div class="value-title">건강한 공간</div>
+        <div class="value-desc">ARTECHBIO 정수·산소 시스템과 G.ROOM 친환경 도료로 가족의 건강까지 설계하는 인테리어를 추구합니다.</div>
       </div>
     </div>
   </section>
-
   <section class="about-brands">
     <div class="section-label" style="text-align:center">Partners</div>
-    <h2 class="section-h">취급 <em>브랜드</em></h2>
+    <h2 class="section-h">함께하는 <em>브랜드</em></h2>
     <div class="brands-grid">
-      <div class="brand-logo-box">elmar</div>
-      <div class="brand-logo-box">Euromobili</div>
-      <div class="brand-logo-box">minottcucine</div>
+      <div class="brand-logo-box">Dada</div>
       <div class="brand-logo-box">nolte</div>
+      <div class="brand-logo-box">Garbelotto</div>
+      <div class="brand-logo-box">Cosmolite</div>
+      <div class="brand-logo-box">CM Spa</div>
       <div class="brand-logo-box">NEXIS</div>
-      <div class="brand-logo-box">Roca</div>
-      <div class="brand-logo-box">paffoni</div>
-      <div class="brand-logo-box">FULEN</div>
-      <div class="brand-logo-box">hansgrohe</div>
-      <div class="brand-logo-box">De Dietrich</div>
       <div class="brand-logo-box">REHAU</div>
-      <div class="brand-logo-box">ARTECBIO</div>
-      <div class="brand-logo-box">G.ROOM</div>
-      <div class="brand-logo-box">DAELIM</div>
-      <div class="brand-logo-box">SAMSUNG</div>
+      <div class="brand-logo-box">Roca</div>
+      <div class="brand-logo-box">hansgrohe</div>
+      <div class="brand-logo-box">ARTECHBIO</div>
     </div>
   </section>
-
   <footer>
-    <div class="footer-copy">© 2024 (주)성원리빙. All rights reserved.</div>
-    <div class="footer-links"><a href="#">블로그</a><a href="#">TEL 031-708-7726</a></div>
+    <div class="footer-copy">&copy; 2025 (주)성원리빙. All rights reserved.</div>
+    <div class="footer-links"><a href="https://blog.naver.com/sungwonliving" target="_blank">블로그</a><a href="tel:031-708-7726">TEL 031-708-7726</a></div>
   </footer>
 </div>
 
 <!-- ======================== PRODUCTS ======================== -->
 <div class="page" id="page-products">
   <section class="products-intro">
-    <div class="section-label">Products</div>
-    <h2 class="section-h">프리미엄 <em>제품 라인업</em></h2>
+    <div class="section-label">Brands</div>
+    <h2 class="section-h">유럽이 만든,<br><em>성원리빙이 고른</em></h2>
   </section>
   <section class="products-grid">
     <div class="prod-grid">
+
       <div class="prod-card">
-        <div class="prod-img" data-label="이탈리안 주방"></div>
-        <div class="prod-body"><div class="prod-tag">Kitchen · Italy</div><div class="prod-name">이탈리안 주방</div><div class="prod-desc">elmar, Euromobili, minottcucine — 이탈리아 장인 정신이 담긴 프리미엄 주방 가구</div></div>
+        <div class="prod-img">
+          <img src="images/dada.jpg" alt="Dada 주방" style="object-position:center 75%">
+        </div>
+        <div class="prod-body">
+          <div class="prod-tag">Italy · Kitchen</div>
+          <div class="prod-name">Dada — Molteni&C</div>
+          <div class="prod-desc">이태리 하이엔드 키친. 장 누벨, 조르지오 아르마니 등 세계적 거장이 참여한 주방 가구의 정점.</div>
+        </div>
       </div>
+
       <div class="prod-card">
-        <div class="prod-img" data-label="독일 주방"></div>
-        <div class="prod-body"><div class="prod-tag">Kitchen · Germany</div><div class="prod-name">독일 주방</div><div class="prod-desc">nolte, SCHEUCHER — 정밀한 독일 엔지니어링의 기능성 주방</div></div>
+        <div class="prod-img">
+          <img src="images/nolte.jpg" alt="Nolte 주방" style="object-position:center 65%">
+        </div>
+        <div class="prod-body">
+          <div class="prod-tag">Germany · Kitchen</div>
+          <div class="prod-name">Nolte Küchen</div>
+          <div class="prod-desc">독일 내 주방 선호도 8년 연속 1위. 정밀한 독일 엔지니어링의 기능성 주방.</div>
+        </div>
       </div>
+
       <div class="prod-card">
-        <div class="prod-img" data-label="국산 주방"></div>
-        <div class="prod-body"><div class="prod-tag">Kitchen · Korea</div><div class="prod-name">국산 프리미엄 주방</div><div class="prod-desc">NEXIS — 합리적 가격의 고품질 국산 주방 시스템</div></div>
+        <div class="prod-img">
+          <img src="images/garbelotto.jpg" alt="Garbelotto 원목마루" style="object-position:center 70%">
+        </div>
+        <div class="prod-body">
+          <div class="prod-tag">Italy · Flooring</div>
+          <div class="prod-name">Garbelotto</div>
+          <div class="prod-desc">1950년부터 이어진 70년 역사. 100% 이탈리아 생산, FSC 인증 프리미엄 원목마루.</div>
+        </div>
       </div>
+
       <div class="prod-card">
-        <div class="prod-img" data-label="창호 시스템"></div>
-        <div class="prod-body"><div class="prod-tag">Window</div><div class="prod-name">창호 시스템</div><div class="prod-desc">REHAU — 독일 프리미엄 창호, 단열·방음·결로 방지</div></div>
+        <div class="prod-img">
+          <img src="images/cosmolite.jpg" alt="Cosmolite 엔지니어드 스톤" style="object-position:center 60%">
+        </div>
+        <div class="prod-body">
+          <div class="prod-tag">Italy · Surface</div>
+          <div class="prod-name">Cosmolite</div>
+          <div class="prod-desc">이탈리아 혁신 엔지니어드 스톤. 친환경 저실리카 소재로 안전하고 세련된 주방 상판.</div>
+        </div>
       </div>
+
       <div class="prod-card">
-        <div class="prod-img" data-label="욕실 · 비데"></div>
-        <div class="prod-body"><div class="prod-tag">Bathroom</div><div class="prod-name">스마트 욕실</div><div class="prod-desc">Roca, paffoni, FULEN, DAELIM — 유럽 디자인 + 스마트 기능</div></div>
+        <div class="prod-img">
+          <img src="images/cm_spa.jpg" alt="CM Spa 싱크볼" style="object-position:center 45%">
+        </div>
+        <div class="prod-body">
+          <div class="prod-tag">Italy · Sink</div>
+          <div class="prod-name">CM Spa</div>
+          <div class="prod-desc">50년 전통의 이태리 키친 싱크 전문 기업. 핸드메이드 공법의 감성과 기능성의 조화.</div>
+        </div>
       </div>
+
       <div class="prod-card">
-        <div class="prod-img" data-label="정수 · 환경"></div>
-        <div class="prod-body"><div class="prod-tag">Purification</div><div class="prod-name">정수 시스템</div><div class="prod-desc">ARTECBIO — 친환경 항균 정수, 건강한 물 솔루션</div></div>
+        <div class="prod-img">
+          <img src="images/nexis.jpg" alt="NEXIS 수입주방" style="object-position:center 55%">
+        </div>
+        <div class="prod-body">
+          <div class="prod-tag">Multi-brand · Kitchen</div>
+          <div class="prod-name">NEXIS</div>
+          <div class="prod-desc">Minotti Cucine, Elmar, Euromobil, Febal Casa — 50년 전통의 수입주방 전문 유통.</div>
+        </div>
       </div>
-      <div class="prod-card">
-        <div class="prod-img" data-label="친환경 마감재"></div>
-        <div class="prod-body"><div class="prod-tag">Eco Material</div><div class="prod-name">친환경 마감재</div><div class="prod-desc">G.ROOM — 유해물질 차단, 항균·항곰팡이 벽지·도료</div></div>
-      </div>
-      <div class="prod-card">
-        <div class="prod-img" data-label="수전 · 위생"></div>
-        <div class="prod-body"><div class="prod-tag">Fittings</div><div class="prod-name">수전 · 위생도기</div><div class="prod-desc">hansgrohe, De Dietrich, CUCHEN — 유럽 프리미엄 수전</div></div>
-      </div>
-      <div class="prod-card">
-        <div class="prod-img" data-label="가전 · 빌트인"></div>
-        <div class="prod-body"><div class="prod-tag">Appliance</div><div class="prod-name">빌트인 가전</div><div class="prod-desc">LG, SAMSUNG, WHISEN — 공간 맞춤 빌트인 가전 솔루션</div></div>
-      </div>
+
     </div>
   </section>
 
   <footer>
-    <div class="footer-copy">© 2024 (주)성원리빙. All rights reserved.</div>
-    <div class="footer-links"><a href="#">블로그</a><a href="#">TEL 031-708-7726</a></div>
-  </footer>
-</div>
-
-<!-- ======================== PORTFOLIO ======================== -->
-<div class="page" id="page-portfolio">
-  <section class="portfolio-intro">
-    <div class="section-label">Portfolio</div>
-    <h2 class="section-h">공간이 달라지는 순간,<br><em>시공 사례</em></h2>
-  </section>
-  <section class="portfolio-grid">
-    <div class="folio-grid">
-      <div class="folio-card">
-        <div class="folio-img"></div>
-        <div class="folio-body"><div class="folio-type">84㎡ · 신축 아파트</div><div class="folio-title">이천 OO아파트 A동</div><div class="folio-meta">이탈리안 주방 + REHAU 창호 + 스마트 욕실<br>2024년 3월 시공 완료</div></div>
-      </div>
-      <div class="folio-card">
-        <div class="folio-img"></div>
-        <div class="folio-body"><div class="folio-type">112㎡ · 신축 아파트</div><div class="folio-title">분당 OO파크뷰</div><div class="folio-meta">독일 주방 nolte + G.ROOM 친환경 마감<br>2024년 1월 시공 완료</div></div>
-      </div>
-      <div class="folio-card">
-        <div class="folio-img"></div>
-        <div class="folio-body"><div class="folio-type">59㎡ · 신축 아파트</div><div class="folio-title">용인 OO힐스테이트</div><div class="folio-meta">NEXIS 국산 주방 + DAELIM 욕실 패키지<br>2023년 11월 시공 완료</div></div>
-      </div>
-      <div class="folio-card">
-        <div class="folio-img"></div>
-        <div class="folio-body"><div class="folio-type">84㎡ · 리모델링</div><div class="folio-title">성남 OO 재건축</div><div class="folio-meta">토탈 패키지 — 주방·욕실·창호·바닥·도배 일괄<br>2024년 5월 시공 완료</div></div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-copy">© 2024 (주)성원리빙. All rights reserved.</div>
-    <div class="footer-links"><a href="#">블로그</a><a href="#">TEL 031-708-7726</a></div>
-  </footer>
-</div>
-
-<!-- ======================== EVENT ======================== -->
-<div class="page" id="page-event">
-  <section class="event-hero">
-    <div class="section-label">Interior Fair</div>
-    <h2 class="section-h">지금 진행 중인<br><em>인테리어 행사</em></h2>
-  </section>
-  <section class="event-list">
-    <div class="event-card">
-      <div class="event-img">행사 이미지</div>
-      <div>
-        <div class="event-tag">진행중</div>
-        <div class="event-title">2024 신축 입주 패키지 특별전</div>
-        <div class="event-desc">84㎡ 기준 토탈 인테리어 패키지를 특별가로 제공합니다. 유럽 명품 주방 + 스마트 욕실 + 창호 업그레이드 포함.</div>
-        <div class="event-period">기간 : 상시 운영 · 예약 상담 필수</div>
-      </div>
-    </div>
-    <div class="event-card">
-      <div class="event-img">행사 이미지</div>
-      <div>
-        <div class="event-tag">진행중</div>
-        <div class="event-title">이탈리안 주방 브랜드 페어</div>
-        <div class="event-desc">elmar, Euromobili, minottcucine — 이탈리아 3대 주방 브랜드를 쇼룸에서 직접 체험하세요. 상담 고객 한정 특별 할인.</div>
-        <div class="event-period">기간 : 상시 운영</div>
-      </div>
-    </div>
-    <div class="event-card">
-      <div class="event-img">행사 이미지</div>
-      <div>
-        <div class="event-tag">예정</div>
-        <div class="event-title">REHAU 창호 체험 이벤트</div>
-        <div class="event-desc">독일 프리미엄 창호 REHAU의 단열·방음 성능을 직접 비교 체험할 수 있는 특별 이벤트.</div>
-        <div class="event-period">기간 : 일정 확정 후 공지</div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-copy">© 2024 (주)성원리빙. All rights reserved.</div>
-    <div class="footer-links"><a href="#">블로그</a><a href="#">TEL 031-708-7726</a></div>
+    <div class="footer-copy">&copy; 2025 (주)성원리빙. All rights reserved.</div>
+    <div class="footer-links"><a href="https://blog.naver.com/sungwonliving" target="_blank">블로그</a><a href="tel:031-708-7726">TEL 031-708-7726</a></div>
   </footer>
 </div>
 
@@ -505,8 +438,8 @@ footer{padding:32px 24px;border-top:1px solid var(--line);display:flex;flex-dire
   </section>
 
   <footer>
-    <div class="footer-copy">© 2024 (주)성원리빙. All rights reserved.</div>
-    <div class="footer-links"><a href="#">블로그</a><a href="#">TEL 031-708-7726</a></div>
+    <div class="footer-copy">&copy; 2025 (주)성원리빙. All rights reserved.</div>
+    <div class="footer-links"><a href="https://blog.naver.com/sungwonliving" target="_blank">블로그</a><a href="tel:031-708-7726">TEL 031-708-7726</a></div>
   </footer>
 </div>
 
